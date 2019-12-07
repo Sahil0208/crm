@@ -2,93 +2,76 @@ package com.amdocs.crm.beans;
 
 import java.util.List;
 
-/**
- * The Class CartSummary.
- */
 public class CartSummary {
-	
-	/** The cart items. */
+
 	private List<ProductBean> cartItems;
-	
-	/** The shipping chares. */
+
 	private double shippingChares;
-	
-	/** The grand total. */
+
 	private double grandTotal;
-	
-	/** The tax. */
+
 	private int tax;
-	
-	/** The total. */
+
 	private double total;
-	
-	/** The tax amount. */
+
 	private double taxAmount;
-	
-	/** The user id. */
+
 	private long userId;
 
-	/**
-	 * Gets the cart items.
-	 *
-	 * @return the cart items
-	 */
 	public List<ProductBean> getCartItems() {
 		return cartItems;
 	}
 
-	/**
-	 * Gets the shipping chares.
-	 *
-	 * @return the shipping chares
-	 */
+	public void setCartItems(List<ProductBean> cartItems) {
+		this.cartItems = cartItems;
+	}
+
 	public double getShippingChares() {
 		return shippingChares;
 	}
 
-	/**
-	 * Gets the grand total.
-	 *
-	 * @return the grand total
-	 */
+	public void setShippingChares(double shippingChares) {
+		this.shippingChares = shippingChares;
+	}
+
 	public double getGrandTotal() {
 		return grandTotal;
 	}
 
-	/**
-	 * Gets the tax.
-	 *
-	 * @return the tax
-	 */
+	public void setGrandTotal(double grandTotal) {
+		this.grandTotal = grandTotal;
+	}
+
 	public int getTax() {
 		return tax;
 	}
 
-	/**
-	 * Gets the total.
-	 *
-	 * @return the total
-	 */
+	public void setTax(int tax) {
+		this.tax = tax;
+	}
+
 	public double getTotal() {
 		return total;
 	}
 
-	/**
-	 * Gets the tax amount.
-	 *
-	 * @return the tax amount
-	 */
+	public void setTotal(double total) {
+		this.total = total;
+	}
+
 	public double getTaxAmount() {
 		return taxAmount;
 	}
 
-	/**
-	 * Gets the user id.
-	 *
-	 * @return the user id
-	 */
+	public void setTaxAmount(double taxAmount) {
+		this.taxAmount = taxAmount;
+	}
+
 	public long getUserId() {
 		return userId;
+	}
+
+	public void setUserId(long userId) {
+		this.userId = userId;
 	}
 
 }

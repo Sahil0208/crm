@@ -10,46 +10,28 @@ public class OrderItem {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long itemId;
+	private long orderItemId;
 
 	private long orderId;
 
-	private long productId;
-
 	private String productName;
-
-	private String description;
 
 	private String imageUrl;
 
-	private String brand;
-
 	private double price;
+
+	private String productType;
+
+	private String productCharacteristics;
 
 	private int quantity;
 
-	public long getItemId() {
-		return itemId;
+	public long getOrderItemId() {
+		return orderItemId;
 	}
 
-	public void setItemId(long itemId) {
-		this.itemId = itemId;
-	}
-
-	public long getOrderId() {
-		return orderId;
-	}
-
-	public void setOrderId(long orderId) {
-		this.orderId = orderId;
-	}
-
-	public long getProductId() {
-		return productId;
-	}
-
-	public void setProductId(long productId) {
-		this.productId = productId;
+	public void setOrderItemId(long orderItemId) {
+		this.orderItemId = orderItemId;
 	}
 
 	public String getProductName() {
@@ -60,28 +42,12 @@ public class OrderItem {
 		this.productName = productName;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
 	public String getImageUrl() {
 		return imageUrl;
 	}
 
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
-	}
-
-	public String getBrand() {
-		return brand;
-	}
-
-	public void setBrand(String brand) {
-		this.brand = brand;
 	}
 
 	public double getPrice() {
@@ -92,11 +58,35 @@ public class OrderItem {
 		this.price = price;
 	}
 
+	public String getProductType() {
+		return productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+	}
+
+	public String getProductCharacteristics() {
+		return productCharacteristics;
+	}
+
+	public void setProductCharacteristics(String productCharacteristics) {
+		this.productCharacteristics = productCharacteristics;
+	}
+
 	public int getQuantity() {
 		return quantity;
 	}
 
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+
+	public long getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(long orderId) {
+		this.orderId = orderId;
 	}
 }

@@ -1,91 +1,97 @@
 package com.amdocs.crm.beans;
 
-/**
- * The Class ProductBean.
- */
+import java.util.Date;
+import java.util.List;
+
 public class ProductBean {
 
-	/** The product id. */
 	private long productId;
 
-	/** The product name. */
 	private String productName;
 
-	/** The description. */
-	private String description;
-
-	/** The image url. */
 	private String imageUrl;
 
-	/** The brand. */
-	private String brand;
-
-	/** The price. */
 	private double price;
 
-	/** The quantity. */
+	private String productType;
+
+	private List<ProductCharacteristic> productCharacteristics;
+
+	private Date creationDate;
+
+	private Date updationDate;
+
 	private int quantity;
 
-	/**
-	 * Gets the product id.
-	 *
-	 * @return the product id
-	 */
 	public long getProductId() {
 		return productId;
 	}
 
-	/**
-	 * Gets the product name.
-	 *
-	 * @return the product name
-	 */
+	public void setProductId(long productId) {
+		this.productId = productId;
+	}
+
 	public String getProductName() {
 		return productName;
 	}
 
-	/**
-	 * Gets the description.
-	 *
-	 * @return the description
-	 */
-	public String getDescription() {
-		return description;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
-	/**
-	 * Gets the image url.
-	 *
-	 * @return the image url
-	 */
 	public String getImageUrl() {
 		return imageUrl;
 	}
 
-	/**
-	 * Gets the brand.
-	 *
-	 * @return the brand
-	 */
-	public String getBrand() {
-		return brand;
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 
-	/**
-	 * Gets the price.
-	 *
-	 * @return the price
-	 */
 	public double getPrice() {
 		return price;
 	}
 
-	/**
-	 * Gets the quantity.
-	 *
-	 * @return the quantity
-	 */
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public String getProductType() {
+		return productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+	}
+
+	public List<ProductCharacteristic> getProductCharacteristics() {
+		return productCharacteristics;
+	}
+
+	public void setProductCharacteristics(List<ProductCharacteristic> productCharacteristics) {
+		this.productCharacteristics = productCharacteristics;
+	}
+
+	public Date getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
+	}
+
+	public Date getUpdationDate() {
+		return updationDate;
+	}
+
+	public void setUpdationDate(Date updationDate) {
+		this.updationDate = updationDate;
+	}
+
 	public int getQuantity() {
 		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 }

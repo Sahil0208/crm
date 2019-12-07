@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.amdocs.crm.beans.CartSummary;
 import com.amdocs.crm.beans.ProductBean;
+import com.amdocs.crm.beans.ProductCharacteristic;
 import com.amdocs.crm.model.Order;
 import com.amdocs.crm.model.OrderItem;
 import com.amdocs.crm.model.enums.OrderStatus;
@@ -49,18 +50,24 @@ public class ImplOrderService implements OrderService {
 		if (order.getOrderId() > 0) {
 			for (ProductBean productBean : cart.getCartItems()) {
 				OrderItem orderItem = new OrderItem();
-				orderItem.setProductId(productBean.getProductId());
-				orderItem.setProductName(productBean.getProductName());
-				orderItem.setDescription(productBean.getDescription());
-				orderItem.setImageUrl(productBean.getImageUrl());
-				orderItem.setBrand(productBean.getBrand());
-				orderItem.setPrice(productBean.getPrice());
-				orderItem.setQuantity(productBean.getQuantity());
 				orderItem.setOrderId(order.getOrderId());
+				orderItem.setProductName(productBean.getProductName());
+				orderItem.setImageUrl(productBean.getImageUrl());
+				orderItem.setPrice(productBean.getPrice());
+				orderItem.setProductType(productBean.getProductType());
+				orderItem.setQuantity(productBean.getQuantity());
+				if (productBean.getProductCharacteristics() != null
+						&& !productBean.getProductCharacteristics().isEmpty()) {
+					StringBuilder productChracteristics = new StringBuilder();
+					for (ProductCharacteristic character : productBean.getProductCharacteristics()) {
+						productChracteristics.append(character + ",");
+					}
+					orderItem.setProductCharacteristics(productChracteristics.toString().substring(0,
+							productChracteristics.toString().length() - 1));
+				}
 				orderItemRepository.save(orderItem);
-				orderId = order.getOrderId();
-				emailService.sendOrderCreationMail(orderId);
 			}
+			orderId = order.getOrderId();
 		}
 		return orderId;
 	}

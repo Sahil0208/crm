@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
 import com.amdocs.crm.model.enums.OrderStatus;
 
 @Entity
-@Table(name="MAXIS_ORDER")
+@Table(name = "MAXIS_ORDER")
 public class Order {
 
 	@Id
@@ -39,17 +39,17 @@ public class Order {
 	private double subTotal;
 
 	private double taxAmount;
-	
-	@OneToMany
-    @JoinColumn(name = "orderId")
-	private List<OrderItem> orderItems;
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(updatable = false)
 	private Date creationDate = new Date();
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updationDate = new Date();
+
+	@OneToMany
+	@JoinColumn(name = "orderId")
+	private List<OrderItem> orderItems;
 
 	public long getOrderId() {
 		return orderId;
@@ -123,14 +123,6 @@ public class Order {
 		this.taxAmount = taxAmount;
 	}
 
-	public List<OrderItem> getOrderItems() {
-		return orderItems;
-	}
-
-	public void setOrderItems(List<OrderItem> orderItems) {
-		this.orderItems = orderItems;
-	}
-
 	public Date getCreationDate() {
 		return creationDate;
 	}
@@ -145,6 +137,14 @@ public class Order {
 
 	public void setUpdationDate(Date updationDate) {
 		this.updationDate = updationDate;
+	}
+
+	public List<OrderItem> getOrderItems() {
+		return orderItems;
+	}
+
+	public void setOrderItems(List<OrderItem> orderItems) {
+		this.orderItems = orderItems;
 	}
 
 }

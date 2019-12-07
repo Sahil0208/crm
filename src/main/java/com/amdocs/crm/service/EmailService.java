@@ -48,7 +48,7 @@ public class EmailService {
 	private Context getContext(Order order, User user) {
 		final Context ctx = new Context();
 		ctx.setVariable("fullName", user.getFullName());
-		ctx.setVariable("orderItems", order.getOrderItems());
+		//ctx.setVariable("orderItems", order.getOrderItems());
 		ctx.setVariable("shippingChares", order.getShippingChares());
 		ctx.setVariable("grandTotal", order.getGrandTotal());
 		ctx.setVariable("taxPercentage", order.getTaxPercentage());
